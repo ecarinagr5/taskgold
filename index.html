@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Task Gold</title>
+    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+     body {
+        font-family: 'Montserrat', sans-serif;
+     }
+     .button_run:hover{
+        -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+     }
+
+    </style>
+    <script>
+    function programmers() { 
+
+        //Variables
+        var amountPile = 0;
+        var goldArray = [];
+        var i=0;
+        var majorNum = 0;
+        var indexMajor= 0;
+        var par = 0;
+        var impar = 0;
+        var resultado = [];
+
+
+        //Math.floor to return only Integers en el rango de 2 a 10
+        amontPile = Math.floor(Math.random() * (10 - 2 ) + 2 );
+
+        //Values random on array
+        for(i; i < amontPile; i ++) {
+            randomGold = Math.floor(Math.random() * 1000);
+            goldArray.push(randomGold);
+        }
+
+        //Logic assume that A always takes first a choose and the best option (the major number)
+            goldArray.forEach( function(value,i){
+                //Major Number
+                if( value > majorNum ) {
+                    majorNum = value 
+                    indexMajor = i
+                }
+                else {
+                    majorNum
+                    indexMajor
+                }
+                //Define is par or impar
+                tipoValor = indexMajor % 2 ;
+
+                if (i % 2 === 0) {
+                    par = par + value;
+                }
+                else {
+                    impar = impar + value;
+                }
+            });
+
+
+            if (tipoValor === 0 ) {
+                resultado.push(par)
+                resultado.push(impar)
+            }
+            else {
+                resultado.push(impar)
+                resultado.push(par)
+            }
+
+
+        //Output Setup
+        document.getElementById("lengthId").innerHTML= amontPile ;
+        document.getElementById("showArray").innerHTML= "[ " + goldArray + " ]" ;
+        document.getElementById("choose").innerHTML= majorNum;
+        document.getElementById("tipodeValor").innerHTML= tipoValor === 0 ? "par" : "impar";
+        document.getElementById("result").innerHTML= "[ " + resultado + " ]" ;
+    
+    }
+
+    </script>
+    <body>
+
+    <h1 style="text-align:center;">Task GOLD Carina González</h1>
+    <p onClick="programmers()" style="cursor:pointer;text-align:center;boder:2px solid #007bff;background-color: #007bff; padding:1% 2%; color:#fff; width:200px;margin:2% auto;" class="button_run">RUN</p>
+    <div style="text-align:left;padding:2% 5%; overflow:hidden; border:2px solid #000">
+        <p>The length is: <span id="lengthId" style="font-size:20px;font-weight:900"></span></p>
+        <p>The Gold Array is: <span id="showArray" style="font-size:20px;font-weight:900"></span></p>
+        <p>The First A choose : <span id="choose" style="font-size:20px;font-weight:900"></span> tiene un indice <span id="tipodeValor" style="font-size:20px;font-weight:900"></span> entonces los valores del programador A se sumaran con esa base</p>
+        <p>Result [Programmer A, Programmer B]: <span id="result" style="font-size:20px;font-weight:900"></span></p>
+    </div>
+    </body>
+</html>
